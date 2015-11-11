@@ -1,0 +1,40 @@
+{
+  "name": "badgifier",
+  "version": "0.0.1",
+  "description": "Generate badges without third-parties services",
+  "main": "index.js",
+  "dependencies": {
+    "libxmljs": "^0.15.0",
+    "minimist": "^1.2.0",
+    "xml-parser": "^1.2.1",
+    "xml2js": "^0.4.15",
+    "xmldoc": "^0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edravis/badgifier.git"
+  },
+  "keywords": [
+    "badge",
+    "test",
+    "coding",
+    "standard",
+    "istanbul",
+    "travis",
+    "coveralls",
+    "wercker",
+    "generate",
+    "automatic",
+    "insert"
+  ],
+  "author": "Rubén Sospedra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edravis/badgifier/issues"
+  },
+  "homepage": "https://github.com/edravis/badgifier#readme"
+}
