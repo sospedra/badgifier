@@ -1,22 +1,31 @@
 {
   "name": "badgifier",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate badges without third-parties services",
   "main": "badgifier.js",
   "dependencies": {
     "minimist": "^1.2.0",
     "xmldoc": "^0.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.0",
+    "snazzy": "^2.0.1",
+    "standard": "^5.3.1",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.2"
+  },
   "scripts": {
-    "test": "npm test"
+    "start": "node badgifier.js",
+    "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
+    "pretest": "npm run-script standard",
+    "test": "node_modules/.bin/istanbul cover --report cobertura ./test/**.js | node_modules/.bin/tap-spec"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edravis/badgifier.git"
   },
   "bin": {
-    "badgifier": "badgifier.js"
+    "badgifier": "./bin/badgifier.js"
   },
   "keywords": [
     "badge",
