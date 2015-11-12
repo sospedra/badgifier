@@ -1,13 +1,10 @@
 {
   "name": "badgifier",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Generate badges without third-parties services",
-  "main": "index.js",
+  "main": "badgifier.js",
   "dependencies": {
-    "libxmljs": "^0.15.0",
     "minimist": "^1.2.0",
-    "xml-parser": "^1.2.1",
-    "xml2js": "^0.4.15",
     "xmldoc": "^0.3.2"
   },
   "devDependencies": {},
@@ -17,6 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edravis/badgifier.git"
+  },
+  "bin": {
+    "badgifier": "badgifier.js"
   },
   "keywords": [
     "badge",
