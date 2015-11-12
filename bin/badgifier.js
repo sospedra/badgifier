@@ -1,3 +1,3 @@
-#!/bin/bash/env node
+#!/usr/bin/env node
 
 require('../')
