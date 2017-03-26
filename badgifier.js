@@ -5,7 +5,7 @@ const params = badgifier.parameters()
 
 badgifier.read(params.input).then((file) => {
   const xml = badgifier.parse(file)
-  const rate = params.rate(xml)
+  const rate = badgifier.rate(xml)
   const color = badgifier.color(params, rate)
   const shield = badgifier.shield(rate, color)
 
