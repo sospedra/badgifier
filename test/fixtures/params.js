@@ -1,3 +1,5 @@
+const rate = require('../../lib/rate')
+
 module.exports = {
   default: {
     _: [],
@@ -5,9 +7,11 @@ module.exports = {
     i: './coverage/cobertura-coverage.xml',
     output: console.log,
     o: console.log,
-    threshold_high: 95,
+    rate: rate,
+    r: rate,
+    'threshold-high': 95,
     th: 95,
-    threshold_low: 65,
+    'threshold-low': 65,
     tl: 65
   }
 }

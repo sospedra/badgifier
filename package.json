@@ -1,6 +1,6 @@
 {
   "name": "badgifier",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Generate badges without third-parties services",
   "main": "badgifier.js",
   "dependencies": {
