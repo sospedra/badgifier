@@ -2,16 +2,12 @@
 
 const tape = require('tape')
 const badgifier = require('../lib/')
-
-const fixtures = {
-  params: require('./fixtures/params')
-}
+const defaultParams = require('./fixtures/params')
 
 tape('Can generate default parameters', (t) => {
-  t.plan(4)
-
   const params = badgifier.parameters()
-  const defaultParams = fixtures.params.default
+
+  t.plan(4)
 
   t.equals(params.input, defaultParams.input, 'the param input is the cobertura-coverage.xml')
   t.equals(params.output, defaultParams.output, 'the param output is console.log')
@@ -61,4 +57,19 @@ tape('Can select color', (t) => {
   t.equals(badgifier.color({ tl: rate + 10 }, rate), 'red', 'should be able to select red color')
   t.equals(badgifier.color({ th: rate + 10 }, rate), 'yellow', 'should be able to select yellow color')
   t.equals(badgifier.color({}, 100), 'green', 'should be able to select green color')
+})
+
+tape('Can read and understand cobertura file', (t) => {
+  // @FIXME not async yet
+  t.plan(2)
+
+  badgifier.read('./fixtures/cobertura-coverage.xml').then((file) => {
+    t.pass('should read any file returning a promise')
+
+    const xml = badgifier.parse(file)
+    t.equals(xml, 'compara con xml muyayo', 'should parse to a xml document')
+
+    const rate = badgifier.rate(xml)
+    t.equals(rate, 82, 'should get the cobertura coverage rate form a parse xml doc')
+  })
 })
