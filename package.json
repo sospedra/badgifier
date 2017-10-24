@@ -5,7 +5,7 @@
   "main": "badgifier.js",
   "dependencies": {
     "minimist": "^1.2.0",
-    "xmldoc": "^0.3.2"
+    "xmldoc": "^1.1.0"
   },
   "devDependencies": {
     "istanbul": "^0.4.0",
