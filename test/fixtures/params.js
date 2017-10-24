@@ -2,8 +2,8 @@ const rate = require('../../lib/rate')
 
 module.exports = {
   _: [],
-  input: './coverage/cobertura-coverage.xml',
-  i: './coverage/cobertura-coverage.xml',
+  input: './coverage/clover.xml',
+  i: './coverage/clover.xml',
   output: console.log,
   o: console.log,
   rate: rate,

@@ -9,7 +9,7 @@ tape('Can generate default parameters', (t) => {
 
   t.plan(4)
 
-  t.equals(params.input, defaultParams.input, 'the param input is the cobertura-coverage.xml')
+  t.equals(params.input, defaultParams.input, 'the param input is the clover.xml')
   t.equals(params.output, defaultParams.output, 'the param output is console.log')
   t.equals(params['threshold-high'], defaultParams['threshold-high'], 'the param threshold-high is 95')
   t.equals(params['threshold-low'], defaultParams['threshold-low'], 'the param threshold-low is 65')
@@ -60,16 +60,18 @@ tape('Can select color', (t) => {
 })
 
 tape('Can read and understand cobertura file', (t) => {
-  // @FIXME not async yet
-  t.plan(2)
+  t.plan(4)
 
-  badgifier.read('./fixtures/cobertura-coverage.xml').then((file) => {
+  badgifier.read('./test/fixtures/clover.xml').then((file) => {
     t.pass('should read any file returning a promise')
 
     const xml = badgifier.parse(file)
-    t.equals(xml, 'compara con xml muyayo', 'should parse to a xml document')
+    t.equals(typeof xml, 'object', 'should parse to a xml document')
+    t.equals(typeof xml.attr, 'object', 'should parse the xml with an attr')
 
     const rate = badgifier.rate(xml)
-    t.equals(rate, 82, 'should get the cobertura coverage rate form a parse xml doc')
+    t.equals(rate, 75, 'should get the cobertura coverage rate form a parse xml doc')
+
+    t.end()
   })
 })
