@@ -16,9 +16,9 @@
   },
   "scripts": {
     "start": "node badgifier.js",
-    "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
+    "standard": "standard --verbose | snazzy",
     "pretest": "npm run-script standard",
-    "test": "node_modules/.bin/istanbul cover --report cobertura ./test/**.js | node_modules/.bin/tap-spec"
+    "test": "istanbul cover --report cobertura ./test/**.js | tap-spec"
   },
   "repository": {
     "type": "git",
