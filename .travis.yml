@@ -8,3 +8,8 @@ node_js:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+before_script:
+  - npm install -g codecov
+script:
+  - npm run cobertura
+  - codecov

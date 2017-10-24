@@ -15,10 +15,11 @@
     "tape": "^4.2.2"
   },
   "scripts": {
+    "cobertura": "istanbul cover --report cobertura ./test/**.js",
     "start": "node badgifier.js",
     "standard": "standard --verbose | snazzy",
     "pretest": "npm run-script standard",
-    "test": "istanbul cover --report cobertura ./test/**.js | tap-spec"
+    "test": "npm run cobertura | tap-spec"
   },
   "repository": {
     "type": "git",
