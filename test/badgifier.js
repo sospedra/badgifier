@@ -5,7 +5,7 @@ const badgifier = require('../lib/')
 const defaultParams = require('./fixtures/params')
 
 tape('Can generate default parameters', (t) => {
-  const params = badgifier.parameters()
+  const params = badgifier.parameters(defaultParams)
 
   t.plan(4)
 

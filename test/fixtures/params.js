@@ -1,13 +1,13 @@
-const rate = require('../../lib/rate')
-
 module.exports = {
   _: [],
-  input: './coverage/clover.xml',
-  i: './coverage/clover.xml',
+  input: './test/fixtures/clover.xml',
+  i: './test/fixtures/clover.xml',
   output: console.log,
   o: console.log,
-  rate: rate,
-  r: rate,
+  f: 'markdown',
+  format: 'markdown',
+  rate: './lib/rate.js',
+  r: './lib/rate.js',
   'threshold-high': 95,
   th: 95,
   'threshold-low': 65,
