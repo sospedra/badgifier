@@ -18,7 +18,7 @@
     "cobertura": "istanbul cover --report clover ./test/**.js",
     "start": "node badgifier.js",
     "standard": "standard --verbose | snazzy",
-    "pretest": "npm run standard && npm run cobertura",
+    "pretest": "npm run standard",
     "test": "npm run cobertura | tap-spec"
   },
   "repository": {
