@@ -1,7 +1,8 @@
 'use strict'
 
 const badgifier = require('./lib/')
-const params = badgifier.parameters()
+const cliargs = badgifier.cliargs()
+const params = badgifier.parameters(cliargs)
 
 badgifier.read(params.input).then((file) => {
   const xml = badgifier.parse(file)
