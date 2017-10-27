@@ -15,11 +15,11 @@
     "tape": "^4.2.2"
   },
   "scripts": {
-    "cobertura": "istanbul cover --report clover ./test/**.js",
     "start": "node badgifier.js",
     "standard": "standard --verbose | snazzy",
     "pretest": "npm run standard",
-    "test": "npm run cobertura | tap-spec"
+    "test:unit": "istanbul cover --report clover ./test/*.js",
+    "test": "npm run test:unit | tap-spec"
   },
   "repository": {
     "type": "git",
