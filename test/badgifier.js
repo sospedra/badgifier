@@ -75,3 +75,14 @@ tape('Can read and understand cobertura file', (t) => {
     t.end()
   })
 })
+
+tape('Can keep the contract for insert', (t) => {
+  const insertPromise = badgifier.insert()
+
+  t.plan(1)
+
+  // Let the insert fail gracefully
+  insertPromise.catch(() => {})
+
+  t.equals(typeof insertPromise.then, 'function', 'should return a Promise')
+})
